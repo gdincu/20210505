@@ -1,0 +1,13 @@
+D:\repos\20210505\20210505\bin\Debug\netcoreapp3.1\20210505.exe
+D:\repos\20210505\20210505\bin\Debug\netcoreapp3.1\20210505.deps.json
+D:\repos\20210505\20210505\bin\Debug\netcoreapp3.1\20210505.runtimeconfig.json
+D:\repos\20210505\20210505\bin\Debug\netcoreapp3.1\20210505.runtimeconfig.dev.json
+D:\repos\20210505\20210505\bin\Debug\netcoreapp3.1\20210505.dll
+D:\repos\20210505\20210505\bin\Debug\netcoreapp3.1\20210505.pdb
+D:\repos\20210505\20210505\obj\Debug\netcoreapp3.1\20210505.csprojAssemblyReference.cache
+D:\repos\20210505\20210505\obj\Debug\netcoreapp3.1\20210505.AssemblyInfoInputs.cache
+D:\repos\20210505\20210505\obj\Debug\netcoreapp3.1\20210505.AssemblyInfo.cs
+D:\repos\20210505\20210505\obj\Debug\netcoreapp3.1\20210505.csproj.CoreCompileInputs.cache
+D:\repos\20210505\20210505\obj\Debug\netcoreapp3.1\20210505.dll
+D:\repos\20210505\20210505\obj\Debug\netcoreapp3.1\20210505.pdb
+D:\repos\20210505\20210505\obj\Debug\netcoreapp3.1\20210505.genruntimeconfig.cache
