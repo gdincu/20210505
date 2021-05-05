@@ -8,23 +8,25 @@ namespace _20210505
         {
 
             /*
-             * Suma, produsul si media aritmetica a primelor n numere (1,2,3) 
+             * Sa se calculeze suma primelor n numere, unde n se citeste de la tastatura.
+             * Sa se calculeze produsul primelor n numere, unde n se citeste de la tastatura.
+             * Se citesc n numere de la tastatura sa se determine suma, produsul si media artimetica a acestora.
              */
             int Suma = 0, Produs = 1;
             
-            Console.WriteLine("Numar: ");
+            Console.Write("Numar: ");
             int n = int.Parse(Console.ReadLine());
             for (int i = 1; i <= n; i++)
             {
                 Suma += i;
                 Produs *= i;
             }
-            Console.WriteLine("Suma: " + Suma);
-            Console.WriteLine("Produs: " + Produs);
-            Console.WriteLine("MediaAritmetica: " + Suma / n);
+            Console.Write("\n1) Suma: " + Suma);
+            Console.Write("\n2) Produs: " + Produs);
+            Console.Write("\n3) MediaAritmetica: " + Suma / n);
 
             /*
-             * Numar prim (4) 
+             * Se citeste un numar de la tastatura sa se determine daca este prim sau nu
              */
             static bool estePrim(int n)
             {
@@ -37,23 +39,83 @@ namespace _20210505
             }
 
             if (estePrim(n))
-                Console.WriteLine(n + " este prim!");
+                Console.Write("\n4) " + n + " este prim!");
             else
-                Console.WriteLine(n + " nu este prim!");
+                Console.Write("\n4) " + n + " nu este prim!");
 
             /*
-             * Primele n numbere prime (5)
+             * Sa se afiseaza primele n numere prime, un n este dat de la tastatura
              */
             int count = 0,temp=1;
+            Console.Write("\n6) Primele " + n + " numere prime:");
             while (count < n)
                 if (estePrim(temp))
                 {
-                    Console.WriteLine(temp);
+                    Console.Write(" " + temp);
                     count++;
                     temp++;
                 }
                 else
                     temp++;
+
+            /*
+             * Se citeste un numar de la tastatura sa se afiseze toti divizorii acestuia.
+             */
+            temp = 0; 
+            Console.Write("\n7) Divizori " + n + " :");
+            do {
+                temp++;
+                if (n % temp == 0)
+                    Console.Write(" " + temp);
+            }
+            while (temp <= n / 2);
+            Console.Write(" " + n);
+
+            /*
+             * Sa se calculeze fibonacci pt n
+             */
+            temp = 1;count = 1;
+            int temp2 = 0;
+            Console.Write("\n8) Fibonacci pentru " + n + " : 1");
+            
+            while (count < n)
+            {
+                Console.Write(" " + (temp + temp2));
+                int temp3 = temp2;
+                temp2 = temp;
+                temp += temp3;
+                count++;
+            }
+
+            /*
+             * Se citesc numere de la tastatura pana la intalnirea unui numar mai mare ca 100
+             */
+            temp = 0;
+            Console.Write("\n9) Un nr mai mare ca 100?\n");
+            while (temp <= 100) {
+                Console.Write("Nr: ");
+                temp = int.Parse(Console.ReadLine());
+            }
+            Console.Write("Nr final: " + temp);
+
+            /*
+             * Sa se scrie un program care citeste un număr intreg si care determina corespondetul acestuia in binar folosind algoritmului de impartire la doi. 
+             * Sa se afiseze numarul binar. E.g.: Dati nr intreg: 28 
+             * Echivalentul lui 28 in binar este 11100
+            */
+            Console.Write("\n10) " + n + " in binar: ");
+            String rezBinar = "";
+            while (n > 0) {
+                rezBinar += n % 2;
+                n /= 2;
+            }
+
+            String rezFinal = "";
+            for (int i = rezBinar.Length-1; i >= 0; i--)
+                rezFinal += rezBinar[i];
+            Console.Write(rezFinal);
+
+
         }
     }
 }
