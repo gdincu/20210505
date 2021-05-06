@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 
 namespace _20210505
 {
@@ -229,10 +230,70 @@ namespace _20210505
             Console.Write("\nLocalFormat: " + tt.ToString(System.Globalization.CultureInfo.CreateSpecificCulture("fr-FR")));
             Console.Write("\nUTC: " + tt.ToUniversalTime());
 
+            /*
+             * Se citeste un cuvant de la tastatura sa se determine cate vocale si cate consoane contine.
+             */
+            Console.Write("\n15) Cuvant: ");
+            Suma = 0;
+            String cuvant = Console.ReadLine();
+            for (int i = 0; i < cuvant.Length; i++) { 
+                if (cuvant.ToUpper()[i].Equals('A'))
+                    Suma++;
+                if (cuvant.ToUpper()[i].Equals('E'))
+                    Suma++;
+                if (cuvant.ToUpper()[i].Equals('I'))
+                    Suma++;
+                if (cuvant.ToUpper()[i].Equals('O'))
+                    Suma++;
+                if (cuvant.ToUpper()[i].Equals('U'))
+                    Suma++;
+            }
+            Console.Write(cuvant + " contine " + Suma + " vocale si " + (cuvant.Length - Suma) + " consoane.");
+
+            /*
+             * Sa citeste un cuvant, sa se afiseze inversul acestuia. E.g.: learn => nrael
+             */
+            Console.Write("\n16) Inversul cuvantului introdus este: ");
+            rezFinal = "";
+            for (int i = cuvant.Length - 1; i >= 0; i--)
+                rezFinal += cuvant[i];
+            Console.Write(rezFinal);
+
+            /*
+             * Se citeste un cuvant, sa se determine daca acesta este palindrom. E.g. tenet sau reper.
+             */
+            Console.Write("\n17) Cuvantul introdus este palindrom?: ");
+            if (rezFinal.Equals(cuvant))
+                Console.Write("DA");
+            else
+                Console.Write("NU");
+
+            /*
+             * Se citeste un sir de caractere (un cuvant sau o propozitie) sa se determine de cate ori se regaseste o anumita litera.
+             */
+            Console.Write("\n18) Litera cautata: ");
+            Suma = 0;
+            rezFinal = Console.ReadLine();
+
+            for (int i = 0; i < cuvant.Length; i++)
+            {
+                if (cuvant.ToUpper()[i].Equals(rezFinal.ToUpper()))
+                    Suma++;
+
+                    Console.WriteLine(" - " + cuvant.ToUpper()[i] + " " + rezFinal.ToUpper() + " " + Suma);
+                
+            }
+            Console.Write("Litera " + rezFinal + " apare de " + Suma + " ori."); //Nu merge
+            Console.Write("Litera " + rezFinal + " apare de " + Regex.Matches(cuvant, rezFinal).Count + " ori.");
 
 
+            /*
+             * Se citeste o propozitie, sa se determine cate cuvinte contine.
+             */
+            Console.Write("\n19) Propozitie: ");
+            rezFinal = Console.ReadLine();
 
-
+            //*****//
 
 
 
