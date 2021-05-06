@@ -277,24 +277,42 @@ namespace _20210505
 
             for (int i = 0; i < cuvant.Length; i++)
             {
-                if (cuvant.ToUpper()[i].Equals(rezFinal.ToUpper()))
+                if (cuvant.ToUpper()[i].Equals(rezFinal.ToUpper()[0]))
                     Suma++;
 
                     Console.WriteLine(" - " + cuvant.ToUpper()[i] + " " + rezFinal.ToUpper() + " " + Suma);
                 
             }
             Console.Write("Litera " + rezFinal + " apare de " + Suma + " ori."); //Nu merge
-            Console.Write("Litera " + rezFinal + " apare de " + Regex.Matches(cuvant, rezFinal).Count + " ori.");
-
+            //Console.Write("Litera " + rezFinal + " apare de " + Regex.Matches(cuvant, rezFinal).Count + " ori.");
 
             /*
              * Se citeste o propozitie, sa se determine cate cuvinte contine.
              */
             Console.Write("\n19) Propozitie: ");
             rezFinal = Console.ReadLine();
+            string[] cuvinte = rezFinal.Split(' ');
+            Console.Write("\nPropozitia contine " + cuvant.Length + " cuvinte.");
 
-            //*****//
+            /*
+             * Se citeste o propozitie, sa se inlocuiasca spatiile dintre cuvinte cu undeline(_).
+             */
+            //Ex1
+            Console.Write("\n20) Propozitia corectata (Ex1): " + rezFinal.Replace(' ','_'));
+            //Ex2
+            Console.Write("\n20) Propozitia corectata (Ex2): ");
+            for (int i = 0; i < cuvinte.Length-1; i++)
+                Console.Write(cuvinte[i]+"_");
+            Console.Write(cuvinte[cuvinte.Length - 1]);
 
+            /*
+             * Se citeste o propozitie sa se transforme propozita astfel incat prima litera din fiecare cuvant sa fie UPPERCASE. E.g. Acesta este o propozitie. => Aceasta Este O Propozitie.
+             */
+            Console.Write("\n21) Propozitia corectata: ");
+            for (int i = 0; i < cuvinte.Length; i++) {
+                String cuvantTemp = cuvinte[i];
+                Console.Write(char.ToUpper(cuvantTemp[0]) + cuvantTemp.Substring(1) + " ");
+            }
 
 
         }
